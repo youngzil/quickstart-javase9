@@ -1,3 +1,7 @@
+原项目地址
+https://gitee.com/youngzil/quickstart-all
+
+
 关键字：
 requires、exports、opens、uses、provides XXX with XXX、等
 

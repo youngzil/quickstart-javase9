@@ -3,7 +3,7 @@
  * 文件名：EventService.java
  * 版本信息：
  * 日期：2018年3月28日
- * Copyright asiainfo Corporation 2018
+ * Copyright yangzl Corporation 2018
  * 版权所有 *
  */
 package org.quickstart.javase9.api;
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * EventService
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年3月28日 上午11:04:20
  * @since 1.0
  */

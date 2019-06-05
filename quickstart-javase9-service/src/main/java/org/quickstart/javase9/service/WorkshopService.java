@@ -3,7 +3,7 @@
  * 文件名：WorkshopService.java
  * 版本信息：
  * 日期：2018年3月28日
- * Copyright asiainfo Corporation 2018
+ * Copyright yangzl Corporation 2018
  * 版权所有 *
  */
 package org.quickstart.javase9.service;
@@ -17,7 +17,7 @@ import org.quickstart.javase9.api.EventService;
 /**
  * WorkshopService
  * 
- * @author：yangzl@asiainfo.com
+ * @author：youngzil@163.com
  * @2018年3月28日 下午1:22:11
  * @since 1.0
  */

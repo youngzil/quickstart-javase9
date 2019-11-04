@@ -32,14 +32,26 @@ public class JDK9NewFeaturesTest {
 
     List<Integer> list = Arrays.asList(45, 43, 76, 87, 42, 90, 73, 67);
 
-    // list.stream().takeWhile(x->x<50).forEach(System.out::println);
+    list.stream().takeWhile(x -> x < 50).forEach(System.out::println);
+
+    Stream.of("a", "b", "c", "", "e").takeWhile(s -> !s.isEmpty()).forEach(System.out::println);
+
     // 而 dropWhile 则和takeWhile 相反
+
+    //       ofNullable, 在java8中 Stream中的元素不能完全为null，否则空指针异常，而在java9的升级中，允许创建null
 
     // 原来的控制终止方式
     Stream.iterate(1, i -> i + 1).limit(10).forEach(System.out::println);
-
+    //
     // jdk9中
-    // Stream.iterate(1,i<100,i->i+1).forEach(System.out::println);
+    Stream.iterate(1, i -> i < 100, i -> i + 1).forEach(System.out::println);
+
+    // Before Java 8
+    // Employee emp= getEmployee(empId);
+    // Stream<Roles> roles= emp== null? Stream.empty(): emp.roles();
+    // In Java 9
+    // Employee emp= getEmployee(empId);
+    // Stream.ofNullable(emp).flatMap(Employee::roles)
 
   }
 

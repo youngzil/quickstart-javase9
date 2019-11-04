@@ -29,6 +29,7 @@ https://my.oschina.net/mdxlcj/blog/1622984
 
 JDK10新特性详解
 1、局部变量var
+          将前端思想var关键字引入java后段，自动检测所属于类型，一种情况除外，不能为null，因为不能判断具体类型，会报异常。
 2、copyOf方法：返回不可变集合
 7、垃圾收集器的优化
     1、JDK9垃圾收集器 ：新生代：ParNew收集器；老年代：Parallel Old收集器   Stop The World

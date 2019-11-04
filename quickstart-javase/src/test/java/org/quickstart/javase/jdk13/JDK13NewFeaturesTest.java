@@ -36,6 +36,9 @@ public class JDK13NewFeaturesTest {
         break;
     }
 
+
+
+
     // JDK12版本
     switch (day) {
       case MONDAY, FRIDAY, SUNDAY -> System.out.println(6);
@@ -51,7 +54,59 @@ public class JDK13NewFeaturesTest {
       default -> "many";
     });
 
+
+
+
+    // JDK12之前：
+    int numLetters;
+    switch (day) {
+      case MONDAY:
+      case FRIDAY:
+      case SUNDAY:
+        numLetters = 6;
+        break;
+      case TUESDAY:
+        numLetters = 7;
+        break;
+      case THURSDAY:
+      case SATURDAY:
+        numLetters = 8;
+        break;
+      case WEDNESDAY:
+        numLetters = 9;
+        break;
+      default:
+        throw new IllegalStateException("Wat: " + day);
+    }
+
+
+    // JDK12:将此表达为一种陈述是迂回的，重复的，并且容易出错。意味着我们应该计算numLetters每一天的价值。应该可以直接说，使用更清晰，更安全Switch表达式
+    int numLetters2 = switch (day) {
+      case MONDAY, FRIDAY, SUNDAY -> 6;
+      case TUESDAY                -> 7;
+      case THURSDAY, SATURDAY     -> 8;
+      case WEDNESDAY              -> 9;
+    };
+
+
+
   }
+
+  // jdk12
+  static void howMany1(int k) {
+    switch (k) {
+      case 1 -> System.out.println("one");
+      case 2 -> System.out.println("two");
+      case 3 -> System.out.println("many");
+    }
+  }
+
+  // 或者类上，我想到的这个switch这个功能可以用在抽象工厂类方面。
+  // T result = switch (arg) {
+  //   case L1 -> e1;
+  //   case L2 -> e2;
+  //   default -> e3;
+  // };
 
   // JDK13版本
   static void howMany(int k) {

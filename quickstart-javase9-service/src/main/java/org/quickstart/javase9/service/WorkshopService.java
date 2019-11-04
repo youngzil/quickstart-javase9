@@ -23,6 +23,7 @@ import org.quickstart.javase9.api.EventService;
  */
 public class WorkshopService implements EventService {
 
+    @Override
     public List<String> getEvents() {
         return Stream.of("Kubernetes", "Gamification").map(WorkshopService::prefix).collect(Collectors.toList());
     }

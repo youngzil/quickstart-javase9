@@ -11,7 +11,6 @@ package org.quickstart.javase9.markdown;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ServiceLoader;
-
 import org.quickstart.javase9.api.EventService;
 
 /**
@@ -36,6 +35,7 @@ public class Devday {
 
         List<String> events = new ArrayList<>();
 
+      System.out.println(eventServices);
         eventServices.stream().map(EventService::getEvents).forEach(events::addAll);
 
         System.out.println(markdownService.formatList(events));

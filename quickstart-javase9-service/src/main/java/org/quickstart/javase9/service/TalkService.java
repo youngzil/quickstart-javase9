@@ -23,6 +23,7 @@ import org.quickstart.javase9.api.EventService;
  */
 public class TalkService implements EventService {
 
+    @Override
     public List<String> getEvents() {
         return Stream.of("Deep Learning", "Java 9 Modules in a Nutshell", "Containerized End-2-End-Testing and Monitoring", "JavaScript Lightning Talks", "Citrus & Microservices (Kubernetes)",
                 "Apache Cassandra vs. MongoDB").map(TalkService::prefix).collect(Collectors.toList());

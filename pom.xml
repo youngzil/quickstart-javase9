@@ -1,57 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<parent>
-		<groupId>org.quickstart</groupId>
-		<artifactId>quickstart-all</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>..</relativePath><!-- lookup parent from repository -->
-	</parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!--<parent>
+    <groupId>org.quickstart</groupId>
+    <artifactId>quickstart-all</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>..</relativePath>&lt;!&ndash; lookup parent from repository &ndash;&gt;
+  </parent>-->
 
-	<!-- 整个工程跟传统maven多module的工程结构一样，java9的一个module对应maven project的一个module。下面是根目录下的pom文件： -->
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>quickstart-javase9</artifactId>
-	<packaging>pom</packaging>
-	<name>${project.artifactId}-${project.version}</name>
-	<url>http://maven.apache.org</url>
-	<description>Demo project for XXX</description>
+  <!-- 整个工程跟传统maven多module的工程结构一样，java9的一个module对应maven project的一个module。下面是根目录下的pom文件： -->
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.quickstart</groupId>
+  <artifactId>quickstart-javase9</artifactId>
+  <packaging>pom</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>${project.artifactId}-${project.version}</name>
+  <url>http://maven.apache.org</url>
+  <description>Demo project for XXX</description>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<!--让intellij能够正确编译java9，不然老是变回使用1.5 -->
-		<maven.compiler.source>9</maven.compiler.source>
-		<maven.compiler.target>9</maven.compiler.target>
-	</properties>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!--让intellij能够正确编译java9，不然老是变回使用1.5 -->
+    <maven.compiler.source>13</maven.compiler.source>
+    <maven.compiler.target>13</maven.compiler.target>
+  </properties>
 
-	<dependencies>
-	</dependencies>
+  <dependencies>
 
-	<modules>
-		<module>quickstart-javase9-api</module>
-		<module>quickstart-javase9-service</module>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <modules>
+    <module>quickstart-javase9-api</module>
+    <module>quickstart-javase9-service</module>
     <module>quickstart-javase9-markdown</module>
   </modules>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<!-- 这里管理了一个maven-compiler-plugin，配置release为9，因为java9支持multi release，可以同时支持多个java版本，这里编译为java9版本。 -->
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<!-- 为了能够使用JDK 9的模块系统maven-compiler-plugin版本3.6.1或更高版本是必需的。 -->
-<!-- 					<version>3.6.1</version> -->
-					<version>3.7.0</version>
-					<configuration>
-						<release>9</release>
-						<source>9</source>
-						<target>9</target>
-						<showDeprecation>true</showDeprecation>
-						<showWarnings>true</showWarnings>
-					</configuration>
-				</plugin>
-				
-			</plugins>
-		</pluginManagement>
-	</build>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <!-- 这里管理了一个maven-compiler-plugin，配置release为9，因为java9支持multi release，可以同时支持多个java版本，这里编译为java9版本。 -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <!-- 为了能够使用JDK 9的模块系统maven-compiler-plugin版本3.6.1或更高版本是必需的。 -->
+          <version>3.8.1</version>
+          <configuration>
+            <!--						<release>9</release>-->
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+            <!--            <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
+            <showDeprecation>true</showDeprecation>
+            <showWarnings>true</showWarnings>
+          </configuration>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+  </build>
 
 </project>

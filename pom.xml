@@ -40,6 +40,7 @@
     <module>quickstart-javase9-api</module>
     <module>quickstart-javase9-service</module>
     <module>quickstart-javase9-markdown</module>
+    <module>quickstart-javase</module>
   </modules>
 
   <build>
@@ -55,9 +56,9 @@
             <!--						<release>9</release>-->
             <source>${maven.compiler.source}</source>
             <target>${maven.compiler.target}</target>
-            <!--            <compilerArgs>&#45;&#45;enable-preview</compilerArgs>-->
-            <showDeprecation>true</showDeprecation>
-            <showWarnings>true</showWarnings>
+            <compilerArgs>--enable-preview</compilerArgs>
+<!--            <showDeprecation>true</showDeprecation>-->
+<!--            <showWarnings>true</showWarnings>-->
           </configuration>
         </plugin>
 

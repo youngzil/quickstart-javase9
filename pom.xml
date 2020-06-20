@@ -21,8 +21,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!--让intellij能够正确编译java9，不然老是变回使用1.5 -->
-    <maven.compiler.source>13</maven.compiler.source>
-    <maven.compiler.target>13</maven.compiler.target>
+    <maven.compiler.source>14</maven.compiler.source>
+    <maven.compiler.target>14</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -30,7 +30,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.13</version>
       <scope>test</scope>
     </dependency>
 

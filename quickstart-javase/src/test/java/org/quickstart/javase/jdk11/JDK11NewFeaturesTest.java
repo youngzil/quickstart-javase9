@@ -1,9 +1,6 @@
 package org.quickstart.javase.jdk11;
 
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -12,11 +9,6 @@ import java.net.http.HttpResponse.BodyHandler;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Consumer;
-import java.util.jar.JarFile;
-import java.util.jar.JarOutputStream;
-import java.util.jar.Pack200;
-import java.util.jar.Pack200.Packer;
-import java.util.jar.Pack200.Unpacker;
 import org.junit.Test;
 
 /**

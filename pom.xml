@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <!--<parent>
+  <parent>
     <groupId>org.quickstart</groupId>
     <artifactId>quickstart-all</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <relativePath>..</relativePath>&lt;!&ndash; lookup parent from repository &ndash;&gt;
-  </parent>-->
+  </parent>
 
   <!-- 整个工程跟传统maven多module的工程结构一样，java9的一个module对应maven project的一个module。下面是根目录下的pom文件： -->
   <modelVersion>4.0.0</modelVersion>
@@ -21,20 +20,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!--让intellij能够正确编译java9，不然老是变回使用1.5 -->
-    <maven.compiler.source>15</maven.compiler.source>
-    <maven.compiler.target>15</maven.compiler.target>
+    <java.version>16</java.version>
   </properties>
-
-  <dependencies>
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.1</version>
-      <scope>test</scope>
-    </dependency>
-
-  </dependencies>
 
   <modules>
     <module>quickstart-javase9-api</module>
@@ -54,9 +41,9 @@
           <!-- 为了能够使用JDK 9的模块系统maven-compiler-plugin版本3.6.1或更高版本是必需的。 -->
           <version>3.8.1</version>
           <configuration>
-            <!--						<release>9</release>-->
-            <source>${maven.compiler.source}</source>
-            <target>${maven.compiler.target}</target>
+            <!--<release>9</release>-->
+            <source>${java.version}</source><!-- 源代码使用的JDK版本 -->
+            <target>${java.version}</target> <!-- 需要生成的目标class文件的编译版本 -->
             <compilerArgs>--enable-preview</compilerArgs>
             <showDeprecation>true</showDeprecation>
             <showWarnings>true</showWarnings>
